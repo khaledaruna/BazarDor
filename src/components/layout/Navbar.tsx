@@ -3,8 +3,8 @@ import Link from "next/link";
 
 import { getCategories, getProducts } from "@/lib/api";
 
-import Bangladate from "./Bangladate";
-import CategoryNavbar from "./CategoryNavbar";
+import Bangladate from "../../app/components/Bangladate";
+import CategoryNavbar from "../../app/components/CategoryNavbar";
 import ValueTicker from "./ValueTicker";
 
 const Navbar = async () => {

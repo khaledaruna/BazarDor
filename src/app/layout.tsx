@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Hind_Siliguri } from "next/font/google";
-import Navbar from "@/app/components/Navbar";
+import Navbar from "@/components/layout/Navbar";
 import "./globals.css";
 
 const hindSiliguri = Hind_Siliguri({
