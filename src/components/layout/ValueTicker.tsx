@@ -1,70 +1,33 @@
 "use client";
 
-import Marquee from "react-fast-marquee";
+import type { Product } from "@/types/product";
+import { formatBengaliNumber, formatPrice } from "@/lib/format";
 
-import type { Product } from "@/types/Product";
-
-interface PriceTickerProps {
+export default function PriceTicker({
+  products,
+}: {
   products: Product[];
-}
-
-const unitLabels: Record<string, string> = {
-  kg: "কেজি",
-  litre: "লিটার",
-  dozen: "ডজন",
-  piece: "পিস",
-};
-
-const ValueTicket = ({ products }: PriceTickerProps) => {
-  const formatBanglaNumber = (value: number) => {
-    return new Intl.NumberFormat("bn-BD", {
-      maximumFractionDigits: 1,
-    }).format(value);
-  };
+}) {
+  const items = [...products, ...products];
 
   return (
-    <div className="border-y border-bazar-border bg-bazar-surface">
-      <Marquee speed={170} pauseOnHover gradient={false}>
-        {products.map((product) => {
-          const isUp = product.change.dir === "up";
-          const isDown = product.change.dir === "down";
-
-          return (
-            <div
-              key={product.id}
-              className="mr-9 flex h-8.5 items-center gap-2 whitespace-nowrap text-[12px]"
-            >
-              <span className="text-sm">{product.image}</span>
-
-              <span className="font-medium text-bazar-text">
-                {product.nameBn}
-              </span>
-
-              <span className="text-bazar-text">
-                {formatBanglaNumber(product.today)} টাকা/
-                {unitLabels[product.unit] ?? product.unit}
-              </span>
-
-              <span
-                className={`font-semibold ${
-                  isUp
-                    ? "text-bazar-danger"
-                    : isDown
-                      ? "text-bazar-success"
-                      : "text-bazar-muted"
-                }`}
-              >
-                {isUp && "▲ "}
-                {isDown && "▼ "}
-                {!isUp && !isDown && "• "}
-                {formatBanglaNumber(Math.abs(product.change.pct))}%
-              </span>
-            </div>
-          );
-        })}
-      </Marquee>
+    <div className="overflow-hidden border-y border-amber-200 bg-amber-50 py-3">
+      <div className="ticker-track flex w-max gap-10 whitespace-nowrap">
+        {items.map((product, index) => (
+          <span
+            key={`${product.id}-${index}`}
+            className="text-sm font-medium text-gray-800"
+          >
+            🛒 {product.name} · {formatPrice(product.today)} ·{" "}
+            {product.change > 0
+              ? "▲"
+              : product.change < 0
+                ? "▼"
+                : "—"}{" "}
+            {formatBengaliNumber(Math.abs(product.change))}%
+          </span>
+        ))}
+      </div>
     </div>
   );
-};
-
-export default ValueTicket;
+}

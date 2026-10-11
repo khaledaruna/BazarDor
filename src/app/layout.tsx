@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Hind_Siliguri } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
+import ToastProvider from "@/components/provider/ToastProvider";
 import "./globals.css";
 
 const hindSiliguri = Hind_Siliguri({
@@ -26,7 +27,9 @@ const Layout = ({ children }: Readonly<LayoutProps>) => {
     <html lang="bn" className={`${hindSiliguri.variable} antialiased`} suppressHydrationWarning>
       <body suppressHydrationWarning>
         <Navbar />
+         <ToastProvider />
         <main>{children}</main>
+        <footer/>
       </body>
     </html>
   );
