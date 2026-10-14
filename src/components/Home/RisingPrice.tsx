@@ -6,7 +6,7 @@ interface RisingPricesProps {
   products: Product[];
 }
 
-const PriceUp = ({ products }: RisingPricesProps) => {
+const RisingPrice= ({ products }: RisingPricesProps) => {
   const risingProducts = products
     .filter((product) => product.change.dir === "up")
     .sort((a, b) => b.change.pct - a.change.pct)
@@ -31,4 +31,4 @@ const PriceUp = ({ products }: RisingPricesProps) => {
   );
 };
 
-export default PriceUp;
+export default RisingPrice;

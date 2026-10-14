@@ -1,8 +1,9 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
 
-const HeroDate = () => {
+const SetDate = () => {
   const [date, setDate] = useState("");
 
   useEffect(() => {
@@ -24,4 +25,4 @@ const HeroDate = () => {
   return <span>{date || "\u00A0"}</span>;
 };
 
-export default HeroDate;
+export default SetDate;

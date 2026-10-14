@@ -1,7 +1,7 @@
 import AllProducts from "@/components/home/AllProducts";
-import FallingPrices from "@/components/home/FallingPrice";
+import FallingPrice from "@/components/home/FallingPrice";
 import Hero from "@/components/home/Hero";
-import RisingPrices from "@/components/home/PriceUp";
+import RisingPrice from "@/components/home/RisingPrice";
 import { getProducts } from "@/lib/api";
 
 const HomePage = async () => {
@@ -11,9 +11,9 @@ const HomePage = async () => {
     <main className="min-h-screen bg-bazar-bg">
       <Hero />
 
-      <RisingPrices products={products} />
+      <RisingPrice products={products} />
 
-      <FallingPrices products={products} />
+      <FallingPrice products={products} />
 
       <AllProducts products={products} />
     </main>

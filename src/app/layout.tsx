@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Hind_Siliguri } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import ToastProvider from "@/components/provider/ToastProvider";
+import footer from "@/components/layout/footer";
 import "./globals.css";
 
 const hindSiliguri = Hind_Siliguri({

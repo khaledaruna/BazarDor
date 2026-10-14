@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import Date from "./Date";
+import SetDate from "./SetDate";
 
 const Hero = () => {
   return (
@@ -10,7 +10,7 @@ const Hero = () => {
           {/* Left Content */}
           <div className="w-full [max-w-144]">
             <div className="inline-flex h-7 items-center rounded-full bg-bazar-primary/10 px-3 text-sm font-medium text-bazar-primary">
-              <Date />
+              <SetDate />
             </div>
 
             <h1 className="mt-2 max-w-576px text-[32px] leading-1.25 font-bold text-bazar-text sm:text-4xl sm:leading-45px">
