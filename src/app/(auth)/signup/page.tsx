@@ -71,7 +71,7 @@ const SignUpPage = () => {
 
   return (
     <main className="bg-bazar-bg px-4 py-8">
-      <div className="mx-auto w-full max-w-[440px]">
+      <div className="mx-auto w-full max-w-110">
         {/* Heading */}
         <div className="text-center">
           <h1 className="text-2xl font-bold text-bazar-text">

@@ -13,7 +13,7 @@ const FallingPrice = ({ products }: FallingPricesProps) => {
     .slice(0, 6);
 
   return (
-    <section className="mx-auto mt-10 w-full max-w-[1120px] px-4 lg:px-0">
+    <section className="mx-auto mt-10 w-full max-w-280 px-4 lg:px-0">
       <h2 className="mb-4 text-[22px] font-semibold text-bazar-text">
         <span className="mr-2 text-bazar-success">▼</span>
         আজ দাম কমেছে

@@ -77,7 +77,7 @@ const SignInPage = () => {
 
   return (
     <main className="flex min-h-[calc(100dvh-149px)] bg-bazar-bg px-4 py-8">
-      <div className="mx-auto w-full max-w-[440px]">
+      <div className="mx-auto w-full max-w-110">
         {/* Heading */}
         <div className="text-center">
           <h1 className="text-2xl font-bold text-bazar-text">সাইন ইন করুন</h1>

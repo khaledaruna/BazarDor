@@ -97,7 +97,7 @@ const ProductContent = ({ product }: ProductDetailsProps) => {
           </div>
 
           {/* Today's Price */}
-          <div className="rounded-2xl bg-bazar-soft px-5 py-4 text-center sm:min-w-[130px]">
+          <div className="rounded-2xl bg-bazar-soft px-5 py-4 text-center sm:min-w-32.5">
             <p className="text-xs text-bazar-muted">আজকের দাম</p>
 
             <p className="mt-1 text-[22px] font-bold text-bazar-text">
@@ -177,7 +177,7 @@ const ProductContent = ({ product }: ProductDetailsProps) => {
           </h2>
 
           <div className="overflow-x-auto rounded-xl border border-bazar-border">
-            <table className="w-full min-w-[700px] text-[13px]">
+            <table className="w-full min-w-175 text-[13px]">
               <thead>
                 <tr className="text-bazar-muted">
                   <th className="px-4 py-3 text-left font-medium">বাজার</th>

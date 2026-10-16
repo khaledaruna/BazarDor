@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Hind_Siliguri } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import ToastProvider from "@/components/provider/ToastProvider";
-import footer from "@/components/layout/footer";
+import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
 const hindSiliguri = Hind_Siliguri({
@@ -30,7 +30,7 @@ const Layout = ({ children }: Readonly<LayoutProps>) => {
         <Navbar />
          <ToastProvider />
         <main>{children}</main>
-        <footer/>
+        <Footer/>
       </body>
     </html>
   );

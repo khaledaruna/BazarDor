@@ -57,10 +57,10 @@ const AllProducts = ({ products }: AllProductsProps) => {
   const totalProducts = new Intl.NumberFormat("bn-BD").format(products.length);
 
   return (
-    <section className="mx-auto mt-10 w-full max-w-[1120px] px-4 pb-12 lg:px-0">
+    <section className="mx-auto mt-10 w-full max-w-280 px-4 pb-12 lg:px-0">
       <div
         id="সব-পণ্য"
-        className="mb-5 scroll-mt-[130px] sm:flex sm:items-end sm:justify-between"
+        className="mb-5 scroll-mt-32.5 sm:flex sm:items-end sm:justify-between"
       >
         <div>
           <h2 className="text-[20px] font-bold text-bazar-text">সব পণ্য</h2>
@@ -78,7 +78,7 @@ const AllProducts = ({ products }: AllProductsProps) => {
             <button
               type="button"
               onClick={() => setIsOpen((prev) => !prev)}
-              className="flex h-9 min-w-[135px] items-center justify-between gap-2 rounded-lg border border-bazar-border bg-bazar-surface px-3 text-[13px] font-medium text-bazar-text transition-colors hover:border-bazar-primary"
+              className="flex h-9 min-w-33.75 items-center justify-between gap-2 rounded-lg border border-bazar-border bg-bazar-surface px-3 text-[13px] font-medium text-bazar-text transition-colors hover:border-bazar-primary"
             >
               <span>{selectedOption?.label}</span>
 
@@ -90,7 +90,7 @@ const AllProducts = ({ products }: AllProductsProps) => {
           </div>
 
           {isOpen && (
-            <div className="absolute right-0 top-11 z-20 w-[175px] overflow-hidden rounded-xl border border-bazar-border bg-bazar-surface p-1.5 shadow-lg">
+            <div className="absolute right-0 top-11 z-20 w-43.75 overflow-hidden rounded-xl border border-bazar-border bg-bazar-surface p-1.5 shadow-lg">
               {sortOptions.map((option) => {
                 const isSelected = option.value === sortOption;
 

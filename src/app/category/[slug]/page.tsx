@@ -1,9 +1,9 @@
 const Loading = () => {
   return (
     <main className="min-h-screen bg-bazar-bg">
-      <div className="mx-auto w-full max-w-[1120px] px-4 py-8 lg:px-0">
+      <div className="mx-auto w-full max-w-280 px-4 py-8 lg:px-0">
         {/* Hero Skeleton */}
-        <div className="h-[283px] animate-pulse rounded-3xl border border-bazar-border bg-bazar-surface" />
+        <div className="h-70.75 animate-pulse rounded-3xl border border-bazar-border bg-bazar-surface" />
 
         {/* Section Skeleton */}
         <div className="mt-10">
@@ -13,7 +13,7 @@ const Loading = () => {
             {Array.from({ length: 6 }).map((_, index) => (
               <div
                 key={index}
-                className="h-[128px] animate-pulse rounded-2xl border border-bazar-border bg-bazar-surface p-4"
+                className="h-32 animate-pulse rounded-2xl border border-bazar-border bg-bazar-surface p-4"
               >
                 <div className="flex items-center gap-3">
                   <div className="size-12 rounded-xl bg-bazar-border" />

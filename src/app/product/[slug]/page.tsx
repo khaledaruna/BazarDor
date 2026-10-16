@@ -39,7 +39,7 @@ const ProductDetailsPage = async ({ params }: ProductDetailsPageProps) => {
     <main className="min-h-screen bg-bazar-bg">
       <ScrollUp slug={slug} />
 
-      <div className="mx-auto w-full max-w-[1120px] px-4 py-6 lg:px-0">
+      <div className="mx-auto w-full max-w-280 px-4 py-6 lg:px-0">
         <ProductContent product={product} />
       </div>
     </main>

@@ -3,9 +3,9 @@ import Link from "next/link";
 
 import { getCategories, getProducts } from "@/lib/api";
 
-import Bangladate from "../../app/components/Bangladate";
-import CategoryNavbar from "../../app/components/CategoryNavbar";
-import ValueTicker from "./ValueTicker";
+import Bangladate from "@/components/layout/Bangladate";
+import CategoryNavbar from "./CategoryNavbar";
+import ValueTicker from "@/components/layout/ValueTicker";
 
 const Navbar = async () => {
   const [categories, products] = await Promise.all([

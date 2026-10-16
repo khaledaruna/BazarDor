@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import type { Category } from "@/types/Product";
+import type { Category } from "@/types/product";
 
 interface CategoryNavProps {
   categories: Category[];
