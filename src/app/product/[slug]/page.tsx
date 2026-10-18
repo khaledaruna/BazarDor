@@ -1,5 +1,6 @@
 import { headers } from "next/headers";
 import { notFound, redirect } from "next/navigation";
+import { connection } from "next/server";
 
 import ProductContent from "@/components/products/ProductContent";
 import ScrollUp from "@/components/products/ScrollUp";
@@ -15,6 +16,9 @@ interface ProductDetailsPageProps {
 }
 
 const ProductDetailsPage = async ({ params }: ProductDetailsPageProps) => {
+  // Opt into dynamic request-time rendering to prevent static prerendering errors
+  await connection();
+
   const { slug } = await params;
 
   const session = await auth.api.getSession({

@@ -1,37 +1,56 @@
-const Loading = () => {
+import { notFound } from "next/navigation";
+
+import CategoryProducts from "@/components/category/CategoryProducts";
+import { getCategoryBySlug, getProductsByCategory } from "@/lib/api";
+
+export const instant = false;
+
+interface CategoryPageProps {
+  params: Promise<{
+    slug: string;
+  }>;
+}
+
+const CategoryPage = async ({ params }: CategoryPageProps) => {
+  const { slug } = await params;
+
+  const [category, products] = await Promise.all([
+    getCategoryBySlug(slug),
+    getProductsByCategory(slug),
+  ]);
+
+  if (!category) {
+    notFound();
+  }
+
+  const totalProducts = new Intl.NumberFormat("bn-BD").format(products.length);
+
   return (
     <main className="min-h-screen bg-bazar-bg">
-      <div className="mx-auto w-full max-w-280 px-4 py-8 lg:px-0">
-        {/* Hero Skeleton */}
-        <div className="h-70.75 animate-pulse rounded-3xl border border-bazar-border bg-bazar-surface" />
+      <div className="mx-auto w-full max-w-280 px-4 py-6 lg:px-0">
+        {/* Category Header */}
+        <section className="mb-7 rounded-2xl border border-bazar-border bg-bazar-surface p-6">
+          <div className="flex items-center gap-4">
+            <div className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-bazar-soft text-3xl">
+              {category.icon}
+            </div>
 
-        {/* Section Skeleton */}
-        <div className="mt-10">
-          <div className="mb-5 h-7 w-44 animate-pulse rounded-lg bg-bazar-border" />
+            <div>
+              <h1 className="text-2xl font-bold text-bazar-text">
+                {category.nameBn}
+              </h1>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {Array.from({ length: 6 }).map((_, index) => (
-              <div
-                key={index}
-                className="h-32 animate-pulse rounded-2xl border border-bazar-border bg-bazar-surface p-4"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="size-12 rounded-xl bg-bazar-border" />
-
-                  <div className="flex-1">
-                    <div className="h-4 w-2/3 rounded bg-bazar-border" />
-                    <div className="mt-2 h-3 w-1/3 rounded bg-bazar-border" />
-                  </div>
-                </div>
-
-                <div className="mt-4 h-4 w-24 rounded bg-bazar-border" />
-              </div>
-            ))}
+              <p className="mt-1 text-sm text-bazar-muted">
+                {totalProducts}টি পণ্যের আজকের দাম ও পরিবর্তন
+              </p>
+            </div>
           </div>
-        </div>
+        </section>
+
+        <CategoryProducts products={products} />
       </div>
     </main>
   );
 };
 
-export default Loading;
+export default CategoryPage;

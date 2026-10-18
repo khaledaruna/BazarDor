@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 বাজার দর | BazarDor
 
-## Getting Started
+A responsive Bengali market-price application that helps users explore everyday product prices, compare available market information, and make informed shopping decisions.
 
-First, run the development server:
+## 🚀 Features
+
+- **Responsive interface:** Mobile, tablet, and desktop layouts.
+- **Product catalog:** Browse everyday products and their prices.
+- **Price movements:** Identify products with rising and falling prices when change data is available.
+- **Category filtering and sorting:** Browse categories and sort products by numeric price.
+- **Product details:** View product information and available market-price comparisons.
+- **Authentication:** Email/password registration and login using Better Auth.
+- **Social login:** Google and GitHub OAuth integration.
+- **Protected pages:** Require authentication to access product details and profile pages.
+- **Profile management:** Update your display name.
+- **Loading and error states:** Skeleton loaders, empty states, and friendly error pages.
+- **Bengali localization:** Bengali labels and number formatting.
+- **Deployment-ready:** Built for Next.js deployment on Vercel.
+
+## 🛠️ Technologies
+
+- Next.js App Router
+- React
+- TypeScript
+- Tailwind CSS
+- Better Auth
+- MongoDB
+- React Hot Toast
+- Lucide React
+- BazarDor Products API
+- Vercel
+
+## ⚙️ Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+cd BazarDor
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure environment variables
+
+Create `.env.local` using `.env.example` as a reference. Configure the product API, MongoDB connection, Better Auth secret, and OAuth credentials.
+
+### 4. Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 5. Build for production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## 🌐 API Endpoints
 
-To learn more about Next.js, take a look at the following resources:
+Base URL: `https://api.api-store.workers.dev/api/bazardor`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `GET /products` — All products
+- `GET /products?category=chal` — Products filtered by category
+- `GET /products/1` — Individual product
+- `GET /categories` — All categories
+- `GET /categories/chal` — Individual category
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+An alternative API base URL is provided in the assignment.
 
-## Deploy on Vercel
+## 📁 Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```text
+src/
+├── app/
+│   ├── api/auth/[...all]/
+│   ├── category/[slug]/
+│   ├── product/[slug]/
+│   ├── signin/
+│   ├── signup/
+│   ├── profile/
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── loading.tsx
+│   ├── not-found.tsx
+│   └── page.tsx
+├── components/
+├── lib/
+└── types/
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+## 📦 Deployment
+
+Deploy the repository to Vercel. Add the required environment variables in the Vercel project settings, then deploy the production build.
+
+## 👩‍💻 Developer
+
+**Khaleda Runa**
+
+Frontend Web Developer | Modern Web Engineering
+
+- GitHub: https://github.com/khaledaruna
+- Portfolio: https://khaledaruna.com
+
+---
+
+*বাজার দর — প্রয়োজনীয় পণ্যের দাম এক নজরে।*
+
+*সকল দাম সম্ভাব্য; বাজার অবস্থার ওপর নির্ভর করে পরিবর্তিত হয়.*

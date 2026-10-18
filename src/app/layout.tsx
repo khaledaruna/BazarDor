@@ -25,12 +25,17 @@ interface LayoutProps {
 
 const Layout = ({ children }: Readonly<LayoutProps>) => {
   return (
-    <html lang="bn" className={`${hindSiliguri.variable} antialiased`} suppressHydrationWarning>
+    <html 
+      lang="bn" 
+      className={`${hindSiliguri.variable} antialiased`} 
+      data-scroll-behavior="smooth" 
+      suppressHydrationWarning
+    >
       <body suppressHydrationWarning>
         <Navbar />
-         <ToastProvider />
+        <ToastProvider />
         <main>{children}</main>
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

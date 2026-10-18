@@ -30,16 +30,18 @@ const Hero = () => {
             </a>
           </div>
 
-          {/* Right Image */}
+          {/* Right Image Container */}
           <div className="mt-8 flex w-full items-center justify-center lg:mt-0 lg:h-auto lg:w-auto lg:shrink-0">
-            <Image
-              src="/assets/images/bazar-hero.png"
-              alt="বাজারের নিত্যপ্রয়োজনীয় পণ্য"
-              width={285}
-              height={263}
-              priority
-              className="h-auto w-250px object-contain sm:w-280px lg:w-285px"
-            />
+            <div className="relative h-57.5 w-62.5 sm:h-62.5 sm:w-70 lg:h-65.75 lg:w-71.25">
+              <Image
+                src="/assets/images/bazar-hero.png"
+                alt="বাজারের নিত্যপ্রয়োজনীয় পণ্য"
+                fill
+                priority
+                sizes="(max-width: 640px) 250px, (max-width: 1024px) 280px, 285px"
+                className="object-contain"
+              />
+            </div>
           </div>
         </div>
       </div>
