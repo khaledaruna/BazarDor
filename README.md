@@ -110,7 +110,7 @@ Deploy the repository to Vercel. Add the required environment variables in the V
 Frontend Web Developer | Modern Web Engineering
 
 - GitHub: https://github.com/khaledaruna
-- Portfolio: https://khaledaruna.com
+- Live-link:https://bazardor-zeta.vercel.app/
 
 ---
 
